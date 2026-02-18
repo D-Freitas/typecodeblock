@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TypeCodeBlock</title>
+    <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+    <div class="bg-glow" aria-hidden="true"></div>
+    <main class="app">
+        <header class="top">
+            <div class="brand">
+                <p class="kicker">typing trainer</p>
+                <h1>typecodeblock</h1>
+            </div>
+            <p class="subtitle">Author: Davi Freitas</p>
+        </header>
+
+        <section class="panel controls">
+            <label class="field">
+                <span>File</span>
+                <select id="fileSelect"></select>
+            </label>
+
+            <label class="field">
+                <span>Time</span>
+                <select id="durationSelect">
+                    <option value="30">30s</option>
+                    <option value="60" selected>60s</option>
+                    <option value="120">120s</option>
+                    <option value="180">180s</option>
+                </select>
+            </label>
+
+            <button id="restartBtn" class="btn">Restart</button>
+            <button id="uploadBtn" class="btn ghost">Open file</button>
+            <input id="fileInput" type="file" hidden />
+        </section>
+
+        <div id="dropZone" class="drop-zone">
+            <div class="drop-content">
+                <span class="icon">📄</span>
+                <p>Drop file to start typing</p>
+            </div>
+        </div>
+
+        <section class="stats">
+            <article class="panel stat">
+                <span class="label">WPM</span>
+                <strong id="wpmValue">0</strong>
+            </article>
+            <article class="panel stat">
+                <span class="label">Accuracy</span>
+                <strong id="accuracyValue">100%</strong>
+            </article>
+            <article class="panel stat">
+                <span class="label">Time</span>
+                <strong id="timeValue">60s</strong>
+            </article>
+            <article class="panel stat">
+                <span class="label">Progress</span>
+                <strong id="progressValue">0%</strong>
+            </article>
+        </section>
+
+        <section class="panel source-meta">
+            <p id="sourceInfo">No file loaded.</p>
+            <p id="statusText">Initializing resource list...</p>
+        </section>
+
+        <section class="panel typing-panel">
+            <div id="textDisplay" class="text-display"></div>
+            <div class="focus-error">Click to focus and start typing</div>
+            <textarea id="typingInput" spellcheck="false" autocapitalize="off" autocomplete="off"
+                autocorrect="off"></textarea>
+        </section>
+    </main>
+
+    <script src="./app.js" defer></script>
+</body>
+
+</html>
